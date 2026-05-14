@@ -1,4 +1,4 @@
-import { IuserRepository } from "../../../domain/repositories/IUserRepository";
+import { IUserRepository } from "../../../domain/repositories/IUserRepository";
 import { HttpStatus } from "../../../shared/constants/HttpStatus";
 import { Messages } from "../../../shared/constants/Messages";
 import { AppError } from "../../../shared/errors/AppError";
@@ -11,7 +11,7 @@ import { UserResponseMapper } from "../../mappers/UserResponseMapper";
 
 export class LoginUser implements ILoginUser{
     constructor(
-        private _userRepository:IuserRepository,
+        private _userRepository:IUserRepository,
         private _hashService:IHashSevice,
         private _tokenService:ITokenService
     ){}

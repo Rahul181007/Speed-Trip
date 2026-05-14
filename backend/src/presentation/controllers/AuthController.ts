@@ -7,13 +7,16 @@ import { UserResponseMapper } from "../../application/mappers/UserResponseMapper
 import { ILoginUser } from "../../application/interface/use-cases/ILoginUser";
 import { IRefreshToken } from "../../application/interface/use-cases/IRefreshToken";
 import { ILogout } from "../../application/interface/use-cases/ILogout";
+import { IGetCurrentUser } from "../../application/interface/use-cases/IGetCurrentUser";
+import { AppError } from "../../shared/errors/AppError";
 
 export class AuthController {
     constructor(
         private _registerUserUseCase: IRegisterUser,
         private _loginUserUseCase: ILoginUser,
         private _refreshTokenUseCase: IRefreshToken,
-        private _logout: ILogout
+        private _logout: ILogout,
+        private _getCurrentUserUseCase:IGetCurrentUser
     ) { }
 
     registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -58,12 +61,23 @@ export class AuthController {
 
     me = async (
         req: Request,
-        res: Response
+        res: Response,
+        next:NextFunction
     ): Promise<void> => {
+     try {
+        const userId=req.user?.userId;
+        if(!userId){
+            throw new AppError(Messages.AUTH.UNAUTHORIZED,HttpStatus.UNAUTHORIZED);
+        }
+
+        const user=await this._getCurrentUserUseCase.execute(userId);
         res.status(HttpStatus.OK).json({
-            success: true,
-            user: req.user
+            success:true,
+            user,
         })
+     } catch (error:unknown) {
+        next(error)
+     }
     }
 
     refreshAcessToken = async (
