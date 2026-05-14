@@ -1,6 +1,7 @@
-import { PersistedUser, User } from "../../domain/entities/User";
+import { PersistedUser } from "../../domain/entities/User";
 import { LoginResponseDTO } from "../dto/auth/LoginResponseDTO";
 import { RegisterResponseDTO } from "../dto/auth/RegisterResponseDTO";
+import { UserResponseDTO } from "../dto/auth/UserResponseDTO";
 
 export class UserResponseMapper {
   static toRegisterResponseDTO(
@@ -26,6 +27,17 @@ export class UserResponseMapper {
         },
         accessToken,
         refreshToken
+    }
+  }
+
+  static toUserResponse(
+    user:PersistedUser
+  ):UserResponseDTO{
+    return {
+      id:user.id,
+      name:user.name,
+      email:user.email,
+      
     }
   }
 }

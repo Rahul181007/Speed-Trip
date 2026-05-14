@@ -8,6 +8,7 @@ export const Messages = {
         USER_REGISTERED_SUCCESSFULLY:"User registered successfully",
         
         UNAUTHORIZED: "Unauthorized access",
-        LOGOUT_SUCCESS:"Logged out successfully"
+        LOGOUT_SUCCESS:"Logged out successfully",
+        USER_NOT_FOUND:"User not found"
     },
 };

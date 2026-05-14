@@ -1,5 +1,5 @@
-import { PersistedUser, User } from "../../../domain/entities/User";
-import { IuserRepository } from "../../../domain/repositories/IUserRepository";
+import { PersistedUser } from "../../../domain/entities/User";
+import { IUserRepository } from "../../../domain/repositories/IUserRepository";
 import { HttpStatus } from "../../../shared/constants/HttpStatus";
 import { Messages } from "../../../shared/constants/Messages";
 import { AppError } from "../../../shared/errors/AppError";
@@ -10,7 +10,7 @@ import { UserDTOMapper } from "../../mappers/UserDTOMapper";
 
 export class RegisterUser implements IRegisterUser{
     constructor(
-        private _userRepository:IuserRepository,
+        private _userRepository:IUserRepository,
         private _hashService:IHashSevice,
     ){}
 
