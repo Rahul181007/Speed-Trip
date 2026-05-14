@@ -12,8 +12,8 @@ export const initializeAuth= async()=>{
             meResponse.user,
             accessToken
         );
-    } catch (error:unknown) {
-        console.log("User not authenticated",error)
+    } catch{
+        console.log("User not authenticated")
     }finally{
         useAuthStore.getState().setInitializing(false)
     }

@@ -1,4 +1,4 @@
-import { PersistedUser } from "../../../domain/entities/User";
+import {  User } from "../../../domain/entities/User";
 import { IUserRepository } from "../../../domain/repositories/IUserRepository";
 import { HttpStatus } from "../../../shared/constants/HttpStatus";
 import { Messages } from "../../../shared/constants/Messages";
@@ -14,7 +14,7 @@ export class RegisterUser implements IRegisterUser{
         private _hashService:IHashSevice,
     ){}
 
-    async execute(data: RegisterUserDTO): Promise<PersistedUser> {
+    async execute(data: RegisterUserDTO): Promise<User> {
          const existingUser=await this._userRepository.getUserByEmail(data.email);
          if(existingUser){
             throw new AppError(Messages.AUTH.USER_ALREADY_EXISTS,HttpStatus.CONFLICT)

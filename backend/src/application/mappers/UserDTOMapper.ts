@@ -5,11 +5,13 @@ export class UserDTOMapper {
 
     static toEntity(data: RegisterUserDTO): User {
 
-        return {
-        
-            name: data.name,
-            email: data.email,
-            password: data.password,
-        };
+        return new User(
+            "",
+            data.name,
+            data.email,
+            data.password,
+            new Date(),
+            new Date()
+        )
     }
 }

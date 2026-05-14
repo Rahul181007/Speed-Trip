@@ -1,7 +1,7 @@
-import { PersistedUser, User } from "../entities/User";
+import { User } from "../entities/User";
 
 export interface IUserRepository {
-    createUser(user:User):Promise<PersistedUser>;
-    getUserByEmail(email:string):Promise<PersistedUser | null>;
-    getUserById(userId:string):Promise<PersistedUser|null>
+    createUser(user:User):Promise<User>;
+    getUserByEmail(email:string):Promise<User | null>;
+    getUserById(userId:string):Promise<User|null>
 }
