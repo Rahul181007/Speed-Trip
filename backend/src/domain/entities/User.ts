@@ -1,11 +1,14 @@
-export interface User {
-   
-    name:string;
-    email:string;
-    password:string;
-}
 
-export interface PersistedUser extends User {
+export class User {
 
-    id: string;
+    constructor(
+
+        public id: string,
+        public name: string,
+        public email: string,
+        public password: string,
+        public readonly createdAt: Date,
+        public readonly updatedAt: Date
+
+    ) {}
 }

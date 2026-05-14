@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Button from "../../../components/ui/Button"
 import Input from "../../../components/ui/Input"
 import useRegister from "../hooks/useRegister"
@@ -9,13 +9,14 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 const RegisterPage = () => {
     const { registerUser, loading, error } = useRegister()
-
+    const navigate=useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm<RegisterSchemaType>({
         resolver: zodResolver(registerSchema)
     })
 
     const onSubmit = async (data: RegisterSchemaType) => {
         await registerUser(data);
+        navigate("/login")
     }
     return (
         <div>

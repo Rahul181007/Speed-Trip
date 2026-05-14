@@ -1,22 +1,19 @@
-import { Types } from "mongoose";
-import { PersistedUser, User } from "../../domain/entities/User";
+import {  User } from "../../domain/entities/User";
+import { IUserDocument } from "../database/models/UserModel";
 
-interface UserDocument {
-    _id: Types.ObjectId;
-    name: string;
-    email: string;
-    password: string;
-}
+
 
 export class UserMapper {
 
-    static toDomain(user: UserDocument): PersistedUser {
+    static toDomain(user: IUserDocument): User {
 
-        return {
-            id: user._id.toString(),
-            name: user.name,
-            email: user.email,
-            password: user.password,
-        };
+     return new User(
+        user._id.toString(),
+        user.name,
+        user.email,
+        user.password,
+        user.createdAt,
+        user.updatedAt
+     )
     }
 }
