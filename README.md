@@ -310,7 +310,7 @@ along with paginated telemetry data.
 
 ## 📊 Dashboard
 
-<img src="./screenshot/Dashboard.png" width="100%" />
+<img src="./screenshot/dashboard.png" width="100%" />
 
 ---
 
