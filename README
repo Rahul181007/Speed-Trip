@@ -1,105 +1,105 @@
-# Speedo - Trip Analytics Dashboard
+# 🚗 Speedo - Trip Analytics Dashboard
 
 ## Overview
 
 Speedo is a full-stack trip analytics platform that processes GPS trip CSV files and visualizes:
 
-* Route tracking
-* Overspeed detection
-* Idle duration
-* Stoppage duration
-* Segment-based analytics
-* Interactive map visualization
+- Route tracking
+- Overspeed detection
+- Idle duration
+- Stoppage duration
+- Segment-based analytics
+- Interactive map visualization
 
 The project is built using Clean Architecture principles in the backend and a modular feature-based frontend architecture.
 
 ---
 
-# Tech Stack
+# 🛠 Tech Stack
 
 ## Frontend
 
-* React
-* TypeScript
-* Tailwind CSS
-* Zustand
-* Axios
-* React Router DOM
-* React Leaflet
-* Leaflet
+- React
+- TypeScript
+- Tailwind CSS
+- Zustand
+- Axios
+- React Router DOM
+- React Leaflet
+- Leaflet
 
 ## Backend
 
-* Node.js
-* Express.js
-* TypeScript
-* MongoDB
-* Mongoose
-* Multer
-* CSV Parser
+- Node.js
+- Express.js
+- TypeScript
+- MongoDB
+- Mongoose
+- Multer
+- CSV Parser
 
 ---
 
-# Features
+# ✨ Features
 
-## Authentication
+## 🔐 Authentication
 
-* User Registration
-* User Login
-* JWT Authentication
-* Protected Routes
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
 
-## Trip Management
+## 🚗 Trip Management
 
-* Upload CSV trip files
-* View all uploaded trips
-* Delete trips
-* View detailed trip analytics
+- Upload CSV trip files
+- View all uploaded trips
+- Delete trips
+- View detailed trip analytics
 
-## Trip Analytics
+## 📊 Trip Analytics
 
-* Total distance calculation
-* Total duration calculation
-* Idle duration tracking
-* Stoppage duration tracking
-* Overspeed detection
-* Segment-based trip analysis
+- Total distance calculation
+- Total duration calculation
+- Idle duration tracking
+- Stoppage duration tracking
+- Overspeed detection
+- Segment-based trip analysis
 
-## Interactive Map Visualization
+## 🗺 Interactive Map Visualization
 
-* Route rendering
-* Overspeed route highlighting
-* Idle point indicators
-* Stoppage point indicators
-* Dynamic zoom based on selected segment
+- Route rendering
+- Overspeed route highlighting
+- Idle point indicators
+- Stoppage point indicators
+- Dynamic zoom based on selected segment
 
 ---
 
-# Project Architecture
+# 🏗 Project Architecture
 
 ## Backend Architecture
 
 The backend follows Clean Architecture:
 
-* Domain Layer
-* Application Layer
-* Infrastructure Layer
-* Presentation Layer
+- Domain Layer
+- Application Layer
+- Infrastructure Layer
+- Presentation Layer
 
 ## Frontend Architecture
 
 Feature-based modular structure:
 
-* features/
-* components/
-* hooks/
-* services/
-* types/
-* validations/
+- features/
+- components/
+- hooks/
+- services/
+- types/
+- validations/
 
 ---
 
-# Folder Structure
+# 📂 Folder Structure
 
 ## Backend
 
@@ -129,7 +129,7 @@ frontend/
 
 ---
 
-# Environment Variables
+# 🔐 Environment Variables
 
 ## Backend (.env)
 
@@ -148,58 +148,66 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-# Installation
+# ⚙️ Installation
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/Rahul181007/Speed-Trip.git
+
+cd Speed-Trip
 ```
 
 ---
 
-# Backend Setup
+# 🚀 Backend Setup
 
 ```bash
 cd backend
+
 npm install
+
 npm run dev
 ```
 
 ---
 
-# Frontend Setup
+# 💻 Frontend Setup
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
 ---
 
-# API Endpoints
+# 📡 API Endpoints
 
-## Authentication
+## 🔐 Authentication
 
-| Method | Endpoint           | Description   |
-| ------ | ------------------ | ------------- |
-| POST   | /api/auth/register | Register user |
-| POST   | /api/auth/login    | Login user    |
-| POST   | /api/auth/logout   | Logout user   |
-
-## Trips
-
-| Method | Endpoint           | Description      |
-| ------ | ------------------ | ---------------- |
-| POST   | /api/trips/upload  | Upload trip CSV  |
-| GET    | /api/trips         | Get user trips   |
-| GET    | /api/trips/:tripId | Get trip details |
-| DELETE | /api/trips/:tripId | Delete trip      |
-
+| Method | Endpoint | Description |
+| ------ | -------- | ----------- |
+| POST | /api/auth/register | Register user |
+| POST | /api/auth/login | Login user |
+| POST | /api/auth/logout | Logout user |
 
 ---
-# How It Works
+
+## 🚗 Trips
+
+| Method | Endpoint | Description |
+| ------ | -------- | ----------- |
+| POST | /api/trips/upload | Upload trip CSV |
+| GET | /api/trips | Get user trips |
+| GET | /api/trips/:tripId | Get trip details |
+| DELETE | /api/trips/:tripId | Delete trip |
+
+---
+
+# ⚡ How It Works
 
 ## 1. CSV Upload
 
@@ -234,12 +242,16 @@ Overspeed is detected when speed exceeds the defined threshold.
 ## 4. Idle & Stoppage Detection
 
 ### Idle
+
 Detected when:
+
 - Speed = 0
 - Ignition = ON
 
 ### Stoppage
+
 Detected when:
+
 - Speed = 0
 - Ignition = OFF
 
@@ -279,38 +291,52 @@ The dashboard displays:
 - Overspeed duration
 
 along with paginated telemetry data.
+
 ---
 
-# Screenshots
+# 📸 Screenshots
 
-## Authentication
+## 🔐 Authentication
 
 ### Login
-<img src="./screenshot/Login.png" width="100%" />
 
+```html
+<img src="./screenshot/Login.png" width="100%" />
+```
 
 ### Register
+
+```html
 <img src="./screenshot/Register.png" width="100%" />
+```
 
 ---
 
-## Dashboard
+## 📊 Dashboard
 
-<img src="./screenshot/dashboard.png" width="100%" />
+```html
+<img src="./screenshot/Dashboard.png" width="100%" />
+```
 
 ---
 
-## Trip Details
+## 🗺 Trip Details
 
 ### Route Map
 
+```html
 <img src="./screenshot/Map.png" width="100%" />
+```
 
 ### Analytics Panel
+
+```html
 <img src="./screenshot/MapDetails.png" width="100%" />
+```
+
 ---
 
-# Deployment
+# 🌐 Deployment
 
 ## Frontend
 
@@ -322,19 +348,8 @@ Deploy on Render.
 
 ---
 
-# Future Improvements
-
-* Live trip tracking
-* Playback animation
-* Geofencing
-* Export reports
-* Real-time analytics
-* Heatmap visualization
-
----
-
-# Author
+# 👨‍💻 Author
 
 Rahul R
 
-GitHub: [https://github.com/Rahul181007](https://github.com/Rahul181007)
+GitHub: https://github.com/Rahul181007
