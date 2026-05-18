@@ -300,23 +300,17 @@ along with paginated telemetry data.
 
 ### Login
 
-```html
 <img src="./screenshot/Login.png" width="100%" />
-```
 
 ### Register
 
-```html
 <img src="./screenshot/Register.png" width="100%" />
-```
 
 ---
 
 ## 📊 Dashboard
 
-```html
 <img src="./screenshot/dashboard.png" width="100%" />
-```
 
 ---
 
@@ -324,15 +318,11 @@ along with paginated telemetry data.
 
 ### Route Map
 
-```html
 <img src="./screenshot/Map.png" width="100%" />
-```
 
 ### Analytics Panel
 
-```html
 <img src="./screenshot/MapDetails.png" width="100%" />
-```
 
 ---
 
@@ -345,6 +335,17 @@ Deploy on Vercel.
 ## Backend
 
 Deploy on Render.
+
+---
+
+# 🚀 Future Improvements
+
+- Live trip tracking
+- Playback animation
+- Geofencing
+- Export reports
+- Real-time analytics
+- Heatmap visualization
 
 ---
 
