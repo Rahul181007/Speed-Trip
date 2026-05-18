@@ -286,27 +286,28 @@ along with paginated telemetry data.
 ## Authentication
 
 ### Login
-![Login](./screenshot/Login.png)
+<img src="./screenshot/Login.png" width="100%" />
+
 
 ### Register
-![Register](./screenshot/Register.png)
+<img src="./screenshot/Register.png" width="100%" />
 
 ---
 
 ## Dashboard
 
-![Dashboard](./screenshot/dashboard.png)
+<img src="./screenshot/dashboard.png" width="100%" />
 
 ---
 
 ## Trip Details
 
 ### Route Map
-![Route Map](./screenshot/Map.png)
+
+<img src="./screenshot/Map.png" width="100%" />
 
 ### Analytics Panel
-![Analytics Panel](./screenshot/MapDetails.png)
-
+<img src="./screenshot/MapDetails.png" width="100%" />
 ---
 
 # Deployment
