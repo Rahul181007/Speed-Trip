@@ -11,156 +11,156 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const LoginPage = () => {
 
     const { login, loading, error } = useLogin();
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm<LoginSchemaType>({
         resolver: zodResolver(loginSchema)
     })
 
     const onSubmit = async (data: LoginSchemaType) => {
 
-    const response =
-        await login(data);
+        const response =
+            await login(data);
 
-    if (response) {
+        if (response) {
 
-        navigate("/");
-    }
+            navigate("/trips");
+        }
 
     }
     return (
         <div>
-           <div>
+            <div>
 
-    <h1
-        className="
+                <h1
+                    className="
             text-2xl
             font-semibold
             text-center
             mb-8
             text-gray-900
         "
-    >
-        Welcome Back
-    </h1>
+                >
+                    Welcome Back
+                </h1>
 
-    <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-5"
-    >
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="space-y-5"
+                >
 
-        <div>
+                    <div>
 
-            <label
-                className="
+                        <label
+                            className="
                     block
                     text-sm
                     font-medium
                     mb-2
                     text-gray-700
                 "
-            >
-                Email
-            </label>
+                        >
+                            Email
+                        </label>
 
-            <Input
-                type="email"
-                placeholder="example@email.com"
-                {...register("email")}
-            />
+                        <Input
+                            type="email"
+                            placeholder="example@email.com"
+                            {...register("email")}
+                        />
 
-            {errors.email && (
+                        {errors.email && (
 
-                <p
-                    className="
+                            <p
+                                className="
                         text-red-500
                         text-sm
                         mt-1
                     "
-                >
-                    {errors.email.message}
-                </p>
-            )}
-        </div>
+                            >
+                                {errors.email.message}
+                            </p>
+                        )}
+                    </div>
 
-        <div>
+                    <div>
 
-            <label
-                className="
+                        <label
+                            className="
                     block
                     text-sm
                     font-medium
                     mb-2
                     text-gray-700
                 "
-            >
-                Password
-            </label>
+                        >
+                            Password
+                        </label>
 
-            <Input
-                type="password"
-                placeholder="At least 6 characters"
-                {...register("password")}
-            />
+                        <Input
+                            type="password"
+                            placeholder="At least 6 characters"
+                            {...register("password")}
+                        />
 
-            {errors.password && (
+                        {errors.password && (
 
-                <p
-                    className="
+                            <p
+                                className="
                         text-red-500
                         text-sm
                         mt-1
                     "
-                >
-                    {errors.password.message}
-                </p>
-            )}
-        </div>
+                            >
+                                {errors.password.message}
+                            </p>
+                        )}
+                    </div>
 
-        {error && (
+                    {error && (
 
-            <p
-                className="
+                        <p
+                            className="
                     text-red-500
                     text-sm
                 "
-            >
-                {error}
-            </p>
-        )}
+                        >
+                            {error}
+                        </p>
+                    )}
 
-        <Button
-            type="submit"
-            disabled={loading}
-        >
-            {loading
-                ? "Loading..."
-                : "Sign In"}
-        </Button>
+                    <Button
+                        type="submit"
+                        disabled={loading}
+                    >
+                        {loading
+                            ? "Loading..."
+                            : "Sign In"}
+                    </Button>
 
-    </form>
+                </form>
 
-    <p
-        className="
+                <p
+                    className="
             text-center
             mt-8
             text-sm
             text-gray-600
         "
-    >
-        Don't have an account?{" "}
+                >
+                    Don't have an account?{" "}
 
-        <Link
-            to="/register"
-            className="
+                    <Link
+                        to="/register"
+                        className="
                 text-blue-500
                 font-medium
             "
-        >
-            Sign up
-        </Link>
-    </p>
+                    >
+                        Sign up
+                    </Link>
+                </p>
 
-</div>
+            </div>
         </div>
     )
 }
