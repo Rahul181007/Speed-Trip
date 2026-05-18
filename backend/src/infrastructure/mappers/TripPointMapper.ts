@@ -12,7 +12,7 @@ export class TripPointMapper{
             tripPoint.speed,
             tripPoint.isIdle,
             tripPoint.isStopped,
-            tripPoint.isOverSpeed,
+            tripPoint.isOverspeed,
             tripPoint.createdAt,
             tripPoint.updatedAt
         )

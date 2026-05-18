@@ -100,6 +100,7 @@ export const processTripCSV = (filePath: string): Promise<{
                 
                 const startTime = new Date(rows[0].timestamp);
                 const endTime = new Date(rows[rows.length - 1].timestamp);
+
                 resolve({
                     tripPoints,
                     totalDistance,

@@ -5,7 +5,7 @@ import { TripSegmentResponseDTO } from "../../dto/trip/TripSegmentResponseDTO";
 export const generateTripSegments=(
     tripPoints:TripPoint[]
 ):TripSegmentResponseDTO[]=>{
-    const segements:TripSegmentResponseDTO[]=[];
+    const segments:TripSegmentResponseDTO[]=[];
     const segmentSize=20;
 
     for(let startIndex=0;startIndex<tripPoints.length;startIndex+=segmentSize){
@@ -40,8 +40,8 @@ export const generateTripSegments=(
         const startTime=segmentPoints[0].timestamp;
         const endTime=segmentPoints[segmentPoints.length-1].timestamp;
         const duration=(endTime.getTime()-startTime.getTime())/(1000*60);
-        segements.push({
-            segmentIndex:segements.length+1,
+        segments.push({
+            segmentIndex:segments.length+1,
             startPointIndex:startIndex,
             endPointIndex:endIndex,
             distance,
@@ -51,5 +51,5 @@ export const generateTripSegments=(
             overspeedDuration
         })
     }
-    return segements
+    return segments
 }

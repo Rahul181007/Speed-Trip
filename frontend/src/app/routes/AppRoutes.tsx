@@ -5,6 +5,7 @@ import RegisterPage from "../../features/auth/pages/RegisterPage"
 import DashboardPage from "../../features/trip/pages/DashboardPage"
 import ProtectedRoute from "./ProtectedRoute"
 import PublicRoute from "./PublicRoute"
+import TripDetailsPage from "../../features/trip/pages/TripDetailsPage"
 
 
 const AppRoutes = () => {
@@ -12,7 +13,11 @@ const AppRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<ProtectedRoute />}>
-                    <Route path="/" element={<DashboardPage />} />
+                    <Route path="/trips" element={<DashboardPage />} />
+                    <Route
+                        path="/trips/:tripId"
+                        element={<TripDetailsPage />}
+                    />
                 </Route>
 
                 <Route element={<PublicRoute />}>

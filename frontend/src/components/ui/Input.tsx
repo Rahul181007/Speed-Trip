@@ -33,6 +33,7 @@ const Input = ({
                 placeholder:text-gray-400
                 ${className}
             `}
+            required
         />
     );
 };

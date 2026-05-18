@@ -6,7 +6,7 @@ const PublicRoute = () => {
     const isAuthenticated=useAuthStore((state)=>state.isAuthenticated);
 
     if(isAuthenticated){
-        return <Navigate to="/"/>
+        return <Navigate to="/trips"/>
     }
   return <Outlet />
 }

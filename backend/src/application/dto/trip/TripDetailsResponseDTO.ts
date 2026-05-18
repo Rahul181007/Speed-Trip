@@ -12,5 +12,5 @@ export interface TripDetailsResponseDTO{
     totalStoppageDuration:number;
     overspeedDuration:number;
     tripPoints:TripPoint[];
-    segements:TripSegmentResponseDTO[];
+    segments:TripSegmentResponseDTO[];
 }

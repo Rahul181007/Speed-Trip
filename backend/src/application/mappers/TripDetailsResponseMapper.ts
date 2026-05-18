@@ -7,7 +7,7 @@ export class TripDetailsReposneMapper{
    static toResponse(
     trip:Trip,
     tripPoints:TripPoint[],
-    segements:TripSegmentResponseDTO[]
+    segments:TripSegmentResponseDTO[]
    ):TripDetailsResponseDTO{
     return {
         id:trip.id,
@@ -20,7 +20,7 @@ export class TripDetailsReposneMapper{
         totalStoppageDuration:trip.totalStoppageDuration,
         overspeedDuration:trip.overspeedDuration,
         tripPoints,
-        segements
+        segments
     }
    }
 }

@@ -8,7 +8,7 @@ export interface ITripPointDocument extends Document{
     speed:number;
     isIdle:boolean;
     isStopped:boolean;
-    isOverSpeed:boolean;
+    isOverspeed:boolean;
     createdAt:Date;
     updatedAt:Date
 }
@@ -48,7 +48,7 @@ const TripPointSchema=new Schema<ITripPointDocument>(
             required:true,
             default:false,
         },
-        isOverSpeed:{
+        isOverspeed:{
             type:Boolean,
             required:true,
             default:false,
