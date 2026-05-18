@@ -338,17 +338,6 @@ Deploy on Render.
 
 ---
 
-# 🚀 Future Improvements
-
-- Live trip tracking
-- Playback animation
-- Geofencing
-- Export reports
-- Real-time analytics
-- Heatmap visualization
-
----
-
 # 👨‍💻 Author
 
 Rahul R
