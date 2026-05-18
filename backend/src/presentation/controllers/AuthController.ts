@@ -16,7 +16,7 @@ export class AuthController {
         private _loginUserUseCase: ILoginUser,
         private _refreshTokenUseCase: IRefreshToken,
         private _logout: ILogout,
-        private _getCurrentUserUseCase:IGetCurrentUser
+        private _getCurrentUserUseCase: IGetCurrentUser
     ) { }
 
     registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -43,8 +43,8 @@ export class AuthController {
             const data = await this._loginUserUseCase.execute(req.body);
             res.cookie("refreshToken", data.refreshToken, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "strict",
+                secure: true,
+                sameSite: "none",
                 maxAge: 7 * 24 * 60 * 60 * 1000
             })
             res.status(HttpStatus.OK).json({
@@ -62,22 +62,22 @@ export class AuthController {
     me = async (
         req: Request,
         res: Response,
-        next:NextFunction
+        next: NextFunction
     ): Promise<void> => {
-     try {
-        const userId=req.user?.userId;
-        if(!userId){
-            throw new AppError(Messages.AUTH.UNAUTHORIZED,HttpStatus.UNAUTHORIZED);
-        }
+        try {
+            const userId = req.user?.userId;
+            if (!userId) {
+                throw new AppError(Messages.AUTH.UNAUTHORIZED, HttpStatus.UNAUTHORIZED);
+            }
 
-        const user=await this._getCurrentUserUseCase.execute(userId);
-        res.status(HttpStatus.OK).json({
-            success:true,
-            user,
-        })
-     } catch (error:unknown) {
-        next(error)
-     }
+            const user = await this._getCurrentUserUseCase.execute(userId);
+            res.status(HttpStatus.OK).json({
+                success: true,
+                user,
+            })
+        } catch (error: unknown) {
+            next(error)
+        }
     }
 
     refreshAcessToken = async (
@@ -98,24 +98,24 @@ export class AuthController {
         }
     }
 
-    logoutUser=async(
-        _req:Request,
-        res:Response,
-        next:NextFunction
-    ):Promise<void>=>{
+    logoutUser = async (
+        _req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> => {
         try {
             await this._logout.execute();
-            res.clearCookie("refreshToken",{
-                httpOnly:true,
-                secure:false,
-                sameSite:"strict"
+            res.clearCookie("refreshToken", {
+                httpOnly: true,
+                secure: true,
+                sameSite: "none"
             })
 
             res.status(HttpStatus.OK).json({
-                success:true,
-                message:Messages.AUTH.LOGOUT_SUCCESS
+                success: true,
+                message: Messages.AUTH.LOGOUT_SUCCESS
             })
-        } catch (error:unknown) {
+        } catch (error: unknown) {
             next(error)
         }
     }
