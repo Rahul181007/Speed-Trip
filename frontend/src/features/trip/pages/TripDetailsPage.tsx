@@ -106,6 +106,23 @@ const TripDetailsPage = () => {
                     </div>
                 </div>
 
+                <div className="flex flex-wrap gap-5 mb-4 text-sm">
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-1 bg-[#22D3EE] rounded-full" />
+                        <span>Overspeed</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#EC4899]" />
+                        <span>Idle</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#1E3A8A]" />
+                        <span>Stoppage</span>
+                    </div>
+                </div>
+
                 {/* Map Section */}
                 <div className="mb-8 bg-white rounded-xl border border-gray-200 overflow-hidden">
                     <div className="p-4 border-b border-gray-200 bg-gray-50">
@@ -129,22 +146,20 @@ const TripDetailsPage = () => {
                                 setSelectedSegmentIndex(null)
                                 setCurrentPage(1)
                             }}
-                            className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${
-                                selectedSegmentIndex === null
+                            className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${selectedSegmentIndex === null
                                     ? "bg-gray-900 text-white shadow-md"
                                     : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
-                            }`}
+                                }`}
                         >
                             All Segments
                         </button>
                         {trip.segments.map((segment) => (
                             <button
                                 key={segment.segmentIndex}
-                                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${
-                                    selectedSegmentIndex === segment.segmentIndex
+                                className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${selectedSegmentIndex === segment.segmentIndex
                                         ? "bg-gray-900 text-white shadow-md"
                                         : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
-                                }`}
+                                    }`}
                                 onClick={() => {
                                     setSelectedSegmentIndex(segment.segmentIndex)
                                     setCurrentPage(1)
@@ -239,16 +254,15 @@ const TripDetailsPage = () => {
                                 } else {
                                     pageNum = currentPage - 2 + i;
                                 }
-                                
+
                                 return (
                                     <button
                                         key={pageNum}
                                         onClick={() => setCurrentPage(pageNum)}
-                                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                                            currentPage === pageNum
+                                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${currentPage === pageNum
                                                 ? "bg-gray-900 text-white shadow-sm"
                                                 : "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
-                                        }`}
+                                            }`}
                                     >
                                         {pageNum}
                                     </button>
